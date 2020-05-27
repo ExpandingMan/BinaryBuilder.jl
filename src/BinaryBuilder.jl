@@ -1,4 +1,5 @@
 module BinaryBuilder
+
 using Libdl, LibGit2, Random, Sockets, Base64, JSON
 using ObjectFile
 using GitHub
@@ -27,7 +28,7 @@ include("squashfs_utils.jl")
 include("UserNSRunner.jl")
 include("DockerRunner.jl")
 include("AutoBuild.jl")
-include("Wizard.jl")
+include("wizard/Wizard.jl")
 include("Declarative.jl")
 include("Logging.jl")
 

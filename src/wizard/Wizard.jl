@@ -1,3 +1,5 @@
+# TODO make Wizard module
+
 using REPL
 using REPL.Terminals
 using REPL.TerminalMenus
@@ -12,13 +14,13 @@ using Dates
 # It's Magic (TM)!
 export run_wizard
 
-include("wizard/state.jl")
-include("wizard/github.jl")
-include("wizard/yggdrasil.jl")
-include("wizard/utils.jl")
-include("wizard/obtain_source.jl")
-include("wizard/interactive_build.jl")
-include("wizard/deploy.jl")
+include("state.jl")
+include("github.jl")
+include("yggdrasil.jl")
+include("utils.jl")
+include("obtain_source.jl")
+include("interactive_build.jl")
+include("deploy.jl")
 
 function save_last_wizard_state(state::WizardState)
     create_and_bind_mutable_artifact!("wizard_state") do dir

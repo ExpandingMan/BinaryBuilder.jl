@@ -19,13 +19,13 @@ else
     ("LD_LIBRARY_PATH", ":")
 end
 function with_libgfortran(f::Function)
-    libpath_list = [csl_path split(get(ENV, LIBPATH_var, ""), envsep)]
+    libpath_list = [csl_path; split(get(ENV, LIBPATH_var, ""), envsep)]
     libpath = join(filter(x -> !isempty(x), libpath_list), envsep)
     withenv(f, LIBPATH_var => libpath)
 end
 
 # Run all our tests
-include("basic.jl")
+#include("basic.jl")
 include("building.jl")
 include("auditing.jl")
 include("wizard.jl")
